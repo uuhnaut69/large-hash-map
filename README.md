@@ -14,3 +14,4 @@
 
 |JDK 8|FastUtil|Goldman Sachs Collections|HPPC|Koloboke|Trove|
 |---|---|---|---|---|--- |
+|Maps are pretty good for Object-Object maps provided that you can tolerate the extra memory consumption and you will call HashMap constructor with required capacity = actual_capacity / fill_factor + 1 to avoid rehashing.|Consistently fast. It may become even faster if it would introduce any other storage structures except 2 arrays for keys and values.|Implementation is good enough, but is slower than FastUtil and Koloboke.|HPPC is too slow due to an extra underlying array (for cell states).|Is getting second in many tests, but it still outperforms FastUtil in int-int tests. |suffers from using mod operation for array index calculations|
